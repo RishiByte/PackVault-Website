@@ -1,0 +1,46 @@
+# packvault bundle
+
+Bundles allow you to group multiple packages together under a single name, making it easier to sync common stacks or ecosystems.
+
+## Pre-cached Ecosystems
+
+PackVault can generate optimized bundles for common development stacks.
+
+```bash
+packvault bundle frontend
+packvault bundle backend
+packvault bundle fullstack
+packvault bundle frameworks
+```
+
+## Custom Bundles
+
+You can create your own custom bundles to fit your team's workflow.
+
+### Create a bundle
+
+```bash
+packvault bundle save my-stack react vite tailwindcss
+```
+
+### List bundles
+
+View all bundles currently saved in your vault:
+
+```bash
+packvault bundle list
+```
+
+### Delete a bundle
+
+```bash
+packvault bundle delete my-stack
+```
+
+## Syncing Bundles
+
+Once a bundle is created, you can use `packvault sync` to ensure all packages within the bundle are cached and up to date:
+
+```bash
+packvault sync @bundle/my-stack
+```

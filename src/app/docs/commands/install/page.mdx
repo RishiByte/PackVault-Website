@@ -1,0 +1,36 @@
+# packvault install
+
+The `install` command installs packages into your project's `node_modules` directory directly from your local vault, bypassing the internet.
+
+## Usage
+
+```bash
+packvault install [package1] [package2...] [options]
+```
+
+## Examples
+
+### Install specific packages
+
+```bash
+packvault install react
+packvault install vite tailwindcss
+```
+
+### Install from package.json
+
+If you run `install` without arguments, it reads the dependencies from your `package.json` (and cross-references the lockfile if present) and installs them from the cache.
+
+```bash
+packvault install --from-package-json
+```
+
+## How it works
+
+When you run `install`:
+1. PackVault checks if you have network connectivity.
+2. If offline (or forced offline), it queries the local database for the requested package version.
+3. It extracts the cached tarball into the project's `node_modules` folder.
+4. It recursively resolves and installs all required dependencies.
+
+If a package is missing from the vault and you are offline, the installation will fail and notify you which packages need to be synced when you regain connectivity.

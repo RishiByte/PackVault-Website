@@ -1,0 +1,36 @@
+# Project Templates
+
+PackVault includes built-in commands to quickly scaffold new projects using cached dependencies, completely offline.
+
+## Interactive Wizard
+
+The easiest way to create a new project is using the interactive wizard:
+
+```bash
+packvault create
+```
+
+You'll be prompted to choose a framework and provide a project name.
+
+## Direct Creation
+
+If you know what you want, you can create a project directly:
+
+```bash
+packvault create react my-app
+packvault create vue dashboard
+packvault create svelte app
+packvault create nextjs web-app
+packvault create astro docs-site
+packvault create fastify api-server
+```
+
+## Automatic Installation
+
+To automatically install the dependencies for your new project directly from the vault, pass the `--install` flag:
+
+```bash
+packvault create react my-app --install
+```
+
+This ensures your project is completely ready to run without ever touching the network.

@@ -1,0 +1,77 @@
+# Command Reference
+
+PackVault provides a comprehensive CLI for managing your offline packages.
+
+## Core Commands
+
+- [`packvault sync`](/docs/commands/sync) - Cache packages and their dependencies while online.
+- [`packvault install`](/docs/commands/install) - Install packages from the local vault without internet access.
+- [`packvault bundle`](/docs/commands/bundle) - Create and manage ecosystem bundles.
+
+## Advanced Commands
+
+### Doctor
+
+Verify the health of your vault or project:
+
+```bash
+packvault doctor
+packvault doctor --project ./my-app
+packvault doctor --fix
+```
+
+### Search
+
+Search through packages currently cached in your vault:
+
+```bash
+packvault search react
+packvault search vite --versions
+```
+
+### Audit
+
+Perform a security audit using cached vulnerability databases:
+
+```bash
+packvault audit
+packvault audit --project ./my-app
+packvault audit --fix
+```
+
+### Export / Import
+
+Move your vault between machines using portable archives:
+
+```bash
+packvault export -o my-vault.tar.gz
+packvault import my-vault.tar.gz
+```
+
+### Policy
+
+Define allowlists and blocklists to restrict which packages can be synced or installed:
+
+```bash
+packvault policy allow react vite
+packvault policy block lodash
+packvault policy list
+```
+
+### Snapshot
+
+Create a snapshot of a project's exact dependency graph for reproducible restoration:
+
+```bash
+packvault snapshot --project ./my-app -o my-app.vault
+packvault snapshot restore my-app.vault
+```
+
+### Classroom Mode
+
+Set up a host or join an existing classroom network:
+
+```bash
+packvault classroom --host
+packvault classroom --join
+```

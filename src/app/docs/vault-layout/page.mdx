@@ -1,0 +1,37 @@
+# Vault Layout
+
+PackVault stores its data in a dedicated directory on your system. By default, this is located at `~/.packvault/`.
+
+## Directory Structure
+
+```text
+~/.packvault/
+├── cache/          # Tarballs of all cached packages
+├── templates/      # Offline project starter templates
+├── bundles/        # Package bundles (e.g., 'frontend', 'backend')
+├── database/       # SQLite databases containing index and metadata
+├── exports/        # Exported vault archives for portability
+└── config.json     # Global configuration file
+```
+
+## Storage Management
+
+The vault can grow significantly over time as you cache more packages. 
+
+PackVault includes built-in commands to help you manage this storage:
+
+- `packvault doctor --fix`: Identifies and removes orphaned packages or corrupted tarballs.
+- `packvault cache clean`: Removes older versions of packages that haven't been accessed recently.
+
+## Configuration
+
+The `config.json` file allows you to customize PackVault's behavior globally:
+
+```json
+{
+  "registry": "https://registry.npmjs.org/",
+  "concurrency": 10,
+  "storagePath": "~/.packvault",
+  "logLevel": "info"
+}
+```

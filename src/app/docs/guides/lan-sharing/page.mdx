@@ -1,0 +1,43 @@
+# LAN Sharing
+
+PackVault allows you to share your cached packages with other devices on your local network. This is incredibly useful for team environments or when working with multiple machines.
+
+## Starting a Host
+
+To share your vault, simply start the host service:
+
+```bash
+packvault share
+```
+
+This will spin up a lightweight server on your machine and broadcast its presence over mDNS.
+
+## Discovering Peers
+
+From another machine on the same network, you can discover available PackVault hosts:
+
+```bash
+packvault discover
+```
+
+## Connecting to a Peer
+
+Once you've found a host (or if you know its IP address), you can connect to it and synchronize your vaults:
+
+```bash
+packvault connect 192.168.1.25
+```
+
+This will act as a one-way sync, pulling packages from the host into your local vault.
+
+### Bidirectional Sync
+
+If you want both machines to share the packages they've uniquely cached, use bidirectional sync:
+
+```bash
+packvault connect 192.168.1.25 --bidirectional
+```
+
+## Security
+
+LAN sharing in PackVault can be secured using peer authentication tokens to ensure only authorized machines can connect to your vault.

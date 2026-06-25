@@ -1,0 +1,50 @@
+# How It Works
+
+PackVault is designed to act as an intelligent intermediary between your package manager (like `npm`, `yarn`, or `pnpm`) and the upstream registry (like `registry.npmjs.org`).
+
+## The Architecture
+
+```text
+npm Registry
+      │
+      ▼
+  PackVault Sync
+      │
+      ▼
+   Local Vault
+      │
+ ┌────┴────┐
+ ▼         ▼
+Offline   LAN
+Install   Sharing
+           │
+           ▼
+      Peer Sync
+```
+
+## 1. The Sync Phase
+
+When you run `packvault sync`, PackVault reaches out to the upstream registry to:
+1. Fetch the package metadata (versions, dependencies).
+2. Download the actual tarballs (`.tgz` files) for the requested packages.
+3. Recursively resolve and download all necessary dependencies.
+4. Store everything in a structured format in your local `~/.packvault` directory.
+
+## 2. The Local Vault
+
+Your local vault acts as a highly-optimized, offline database. It stores:
+- Package tarballs.
+- Pre-computed dependency graphs.
+- Integrity hashes (SHA-512) for security verification.
+
+PackVault uses a local SQLite database to index this information, allowing for lightning-fast lookups even with tens of thousands of cached packages.
+
+## 3. The Install Phase
+
+When you run `packvault install`, PackVault intercepts the installation request. Instead of reaching out to the internet, it:
+1. Queries the local vault database for the requested package and version constraints.
+2. Resolves the dependency tree completely locally.
+3. Extracts the cached tarballs directly into your `node_modules` folder (or equivalent).
+4. Updates your lockfile if necessary.
+
+Because everything happens locally, installations are significantly faster and, most importantly, require zero network connectivity.

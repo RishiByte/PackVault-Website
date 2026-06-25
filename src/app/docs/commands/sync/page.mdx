@@ -1,0 +1,49 @@
+# packvault sync
+
+The `sync` command is the core of PackVault. It downloads and caches packages and their entire dependency graphs into your local vault so they can be installed offline later.
+
+**Note:** You must have an active internet connection to run this command.
+
+## Usage
+
+```bash
+packvault sync <package1> [package2...] [options]
+```
+
+## Examples
+
+### Sync specific packages
+
+```bash
+packvault sync react vite tailwindcss
+```
+
+### Sync from a lockfile
+
+Automatically reads `package-lock.json`, `yarn.lock`, or `pnpm-lock.yaml` in the current directory and caches all resolved dependencies.
+
+```bash
+packvault sync --from-lockfile
+```
+
+You can also specify the path to a specific lockfile:
+
+```bash
+packvault sync --from-lockfile ./path/to/package-lock.json
+```
+
+### Increase concurrency
+
+Speed up the sync process by increasing the number of concurrent downloads (default is usually 5 or 10):
+
+```bash
+packvault sync react vite --concurrency 20
+```
+
+### Private registries
+
+You can sync from custom or private registries by passing the `--registry` flag, and authenticate with `--token`:
+
+```bash
+packvault sync my-private-pkg --registry https://npm.mycompany.com --token $NPM_TOKEN
+```

@@ -1,0 +1,45 @@
+# Quick Start
+
+Get up and running with PackVault in minutes. This guide will show you how to cache your first packages, go offline, and install them from your local vault.
+
+## 1. Cache Packages While Online
+
+First, while you still have an active internet connection, download the packages you know you'll need. PackVault will fetch the tarballs and metadata from the registry and store them locally.
+
+```bash
+packvault sync react vite tailwindcss
+```
+
+### Syncing from a Lockfile
+
+If you already have a project with a lockfile (`package-lock.json`, `yarn.lock`, or `pnpm-lock.yaml`), you can sync all dependencies defined in it:
+
+```bash
+packvault sync --from-lockfile
+```
+
+You can also specify a specific lockfile path:
+
+```bash
+packvault sync --from-lockfile ./package-lock.json
+```
+
+## 2. Go Offline
+
+Disconnect your device from the internet, or move to your restricted network environment.
+
+## 3. Install From Cache
+
+Now, inside your project directory, you can install the cached packages exactly as you normally would, but using PackVault.
+
+```bash
+packvault install react
+packvault install vite
+```
+
+PackVault will act as a local registry, resolving dependencies from your vault instead of trying to reach out to the internet. No registry connection is required.
+
+## Next Steps
+
+- Learn about [Project Templates](/docs/guides/project-templates) to bootstrap entire applications offline.
+- Discover how to share your vault over the network with [LAN Sharing](/docs/guides/lan-sharing).
