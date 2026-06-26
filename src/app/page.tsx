@@ -79,7 +79,7 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link href="https://github.com/Demon-Die/PackVault" target="_blank" className="w-full sm:w-auto">
+              <Link href="https://github.com/Omnikon-Org/PackVault" target="_blank" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto text-base h-12 px-8">
                   View on GitHub
                 </Button>

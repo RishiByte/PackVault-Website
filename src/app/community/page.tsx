@@ -23,7 +23,7 @@ export default function CommunityPage() {
               <MessageSquare className="h-10 w-10 mx-auto text-[#dc2626] mb-4" />
               <h3 className="text-lg font-bold text-white mb-2">Discussions</h3>
               <p className="text-[#a3a3a3] text-sm mb-4">Ask questions and share your ideas with other developers.</p>
-              <Link href="https://github.com/Demon-Die/PackVault/discussions" target="_blank">
+              <Link href="https://github.com/Omnikon-Org/PackVault/discussions" target="_blank">
                 <Button variant="outline" className="w-full text-white hover:text-white">Join the Chat</Button>
               </Link>
             </div>
@@ -32,7 +32,7 @@ export default function CommunityPage() {
               <GithubIcon className="h-10 w-10 mx-auto text-white mb-4" />
               <h3 className="text-lg font-bold text-white mb-2">Issues & Bugs</h3>
               <p className="text-[#a3a3a3] text-sm mb-4">Found a bug or have a feature request? Open an issue.</p>
-              <Link href="https://github.com/Demon-Die/PackVault/issues" target="_blank">
+              <Link href="https://github.com/Omnikon-Org/PackVault/issues" target="_blank">
                 <Button variant="outline" className="w-full text-white hover:text-white">Report Issue</Button>
               </Link>
             </div>
@@ -41,7 +41,7 @@ export default function CommunityPage() {
               <Heart className="h-10 w-10 mx-auto text-[#dc2626] mb-4" />
               <h3 className="text-lg font-bold text-white mb-2">Contributing</h3>
               <p className="text-[#a3a3a3] text-sm mb-4">Help us improve PackVault by contributing code or docs.</p>
-              <Link href="https://github.com/Demon-Die/PackVault/blob/main/CONTRIBUTING.md" target="_blank">
+              <Link href="https://github.com/Omnikon-Org/PackVault/blob/main/CONTRIBUTING.md" target="_blank">
                 <Button variant="outline" className="w-full text-white hover:text-white">Read Guide</Button>
               </Link>
             </div>
@@ -53,7 +53,7 @@ export default function CommunityPage() {
               We are committed to providing a friendly, safe, and welcoming environment for all, regardless of gender, sexual orientation, disability, ethnicity, religion, or similar personal characteristic.
             </p>
             <p>
-              Please read and follow our <a href="https://github.com/Demon-Die/PackVault/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noreferrer">Code of Conduct</a>.
+              Please read and follow our <a href="https://github.com/Omnikon-Org/PackVault/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noreferrer">Code of Conduct</a>.
             </p>
           </div>
         </div>

@@ -29,7 +29,7 @@ export function Header() {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
             <Link
-              href="https://github.com/Demon-Die/PackVault"
+              href="https://github.com/Omnikon-Org/PackVault"
               target="_blank"
               rel="noreferrer"
             >

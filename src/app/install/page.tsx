@@ -35,7 +35,7 @@ export default function InstallPage() {
                 Install the latest bleeding-edge version directly from the repository.
               </p>
               <div className="flex items-center px-6 py-4 rounded-md bg-[#0a0a0a] border border-[#333333] mb-4">
-                <code className="text-[#e5e5e5] font-mono flex-1">npm install -g github:Demon-Die/PackVault</code>
+                <code className="text-[#e5e5e5] font-mono flex-1">npm install -g github:Omnikon-Org/PackVault</code>
               </div>
             </section>
 
@@ -47,7 +47,7 @@ export default function InstallPage() {
               </p>
               <div className="rounded-md bg-[#0a0a0a] border border-[#333333] overflow-hidden">
                 <pre className="p-6 text-[#e5e5e5] font-mono text-sm overflow-x-auto">
-{`git clone https://github.com/Demon-Die/PackVault
+{`git clone https://github.com/Omnikon-Org/PackVault
 cd PackVault
 
 npm install
