@@ -240,7 +240,9 @@ export default function Home() {
                   <li className="flex items-center text-[#e5e5e5]"><span className="text-green-500 mr-2">✓</span> Project Templates</li>
                   <li className="flex items-center text-[#e5e5e5]"><span className="text-green-500 mr-2">✓</span> Offline Security Audit</li>
                 </ul>
-                <Button variant="outline" className="w-full">Get Started</Button>
+                <Link href="/install">
+                  <Button variant="outline" className="w-full">Get Started</Button>
+                </Link>
               </div>
 
               {/* Paid Tier */}
@@ -259,7 +261,9 @@ export default function Home() {
                   <li className="flex items-center text-[#e5e5e5]"><span className="text-[#dc2626] mr-2">★</span> Local Registry Proxy (`serve`)</li>
                   <li className="flex items-center text-[#e5e5e5]"><span className="text-[#dc2626] mr-2">★</span> Bidirectional Node Connect</li>
                 </ul>
-                <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white">Upgrade to Pro</Button>
+                <Link href="/pro">
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white">Upgrade to Pro</Button>
+                </Link>
               </div>
             </div>
 
