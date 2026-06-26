@@ -216,6 +216,90 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Pricing Section */}
+        <section className="py-24 bg-[#121212] relative border-t border-[#1a1a1a]">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
+              <p className="text-[#a3a3a3] text-lg">
+                Start for free, upgrade when your team needs advanced collaboration.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Free Tier */}
+              <div className="p-8 rounded-2xl bg-[#0a0a0a] border border-[#333333] flex flex-col">
+                <h3 className="text-2xl font-bold text-white mb-2">Community</h3>
+                <p className="text-[#a3a3a3] mb-6">For individual developers and offline coding.</p>
+                <div className="text-4xl font-bold text-white mb-8">Free</div>
+                
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-green-500 mr-2">✓</span> Local Sync & Install</li>
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-green-500 mr-2">✓</span> Integrity Verification</li>
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-green-500 mr-2">✓</span> Lockfile Aware</li>
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-green-500 mr-2">✓</span> Project Templates</li>
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-green-500 mr-2">✓</span> Offline Security Audit</li>
+                </ul>
+                <Button variant="outline" className="w-full">Get Started</Button>
+              </div>
+
+              {/* Paid Tier */}
+              <div className="p-8 rounded-2xl bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] border border-[#dc2626] relative flex flex-col shadow-[0_0_30px_-10px_rgba(220,38,38,0.3)]">
+                <div className="absolute top-0 right-0 bg-[#dc2626] text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">
+                  Recommended
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Pro</h3>
+                <p className="text-[#a3a3a3] mb-6">For teams, classrooms, and enterprise setups.</p>
+                <div className="text-4xl font-bold text-white mb-8">$12<span className="text-xl text-[#a3a3a3] font-normal">/mo</span></div>
+                
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-green-500 mr-2">✓</span> Everything in Community</li>
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-[#dc2626] mr-2">★</span> LAN Package Sharing (mDNS)</li>
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-[#dc2626] mr-2">★</span> Peer-to-Peer Sync</li>
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-[#dc2626] mr-2">★</span> Local Registry Proxy (`serve`)</li>
+                  <li className="flex items-center text-[#e5e5e5]"><span className="text-[#dc2626] mr-2">★</span> Bidirectional Node Connect</li>
+                </ul>
+                <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white">Upgrade to Pro</Button>
+              </div>
+            </div>
+
+            {/* Detailed Pricing Features Table */}
+            <div className="mt-24 max-w-4xl mx-auto overflow-x-auto rounded-xl border border-[#333333]">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-[#1a1a1a] border-b border-[#333333]">
+                    <th className="py-4 px-6 font-semibold text-white">Feature</th>
+                    <th className="py-4 px-6 font-semibold text-center text-white">Community</th>
+                    <th className="py-4 px-6 font-semibold text-center text-[#dc2626] bg-[#dc2626]/10">Pro</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#1a1a1a]">
+                  {[
+                    { feature: "Local Package Caching", free: "✓", pro: "✓" },
+                    { feature: "Offline Install & Sync", free: "✓", pro: "✓" },
+                    { feature: "SHA-512 Integrity Check", free: "✓", pro: "✓" },
+                    { feature: "Lockfile Awareness", free: "✓", pro: "✓" },
+                    { feature: "Offline Project Templates", free: "✓", pro: "✓" },
+                    { feature: "Security Auditing", free: "✓", pro: "✓" },
+                    { feature: "LAN Package Sharing (mDNS)", free: "✗", pro: "✓" },
+                    { feature: "Peer-to-Peer Sync", free: "✗", pro: "✓" },
+                    { feature: "Local Registry Proxy", free: "✗", pro: "✓" },
+                    { feature: "Bidirectional Node Connect", free: "✗", pro: "✓" },
+                    { feature: "Team Collaboration / Classroom", free: "✗", pro: "✓" },
+                    { feature: "Support", free: "Community", pro: "Priority" },
+                  ].map((row, i) => (
+                    <tr key={i} className="hover:bg-[#121212] transition-colors">
+                      <td className="py-4 px-6 font-medium text-[#e5e5e5]">{row.feature}</td>
+                      <td className={`py-4 px-6 text-center ${row.free === '✓' ? 'text-green-500' : row.free === '✗' ? 'text-[#a3a3a3]' : 'text-white'}`}>{row.free}</td>
+                      <td className={`py-4 px-6 text-center bg-[#dc2626]/5 ${row.pro === '✓' ? 'text-green-500 font-bold' : row.pro === '✗' ? 'text-[#a3a3a3]' : 'text-[#dc2626] font-semibold'}`}>{row.pro}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* Comparison Table */}
         <section className="py-24 bg-[#0a0a0a]">
           <div className="container mx-auto px-4 md:px-6">
