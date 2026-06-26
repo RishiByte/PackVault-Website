@@ -1,34 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Terminal, Loader2, Key } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export default function ProPage() {
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [licenseKey, setLicenseKey] = useState<string | null>(null);
-
-  const handlePurchase = () => {
-    setIsProcessing(true);
-    // Simulate network delay for checkout
-    setTimeout(() => {
-      // Generate a dummy key that starts with pv_ to pass the CLI validation
-      const randomChars = Math.random().toString(36).substring(2, 10).toUpperCase();
-      const dummyKey = `pv_${randomChars}_PRO`;
-      setLicenseKey(dummyKey);
-      setIsProcessing(false);
-    }, 1500);
-  };
 
   return (
     <>
       <Header />
       <main className="flex-1 min-h-[calc(100vh-4rem)] py-16 bg-[#0a0a0a]">
         <div className="container mx-auto px-4 md:px-6">
-          {!licenseKey ? (
             <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               {/* Left Column - Value Prop */}
               <div>
@@ -89,74 +73,19 @@ export default function ProPage() {
                   </div>
                 </div>
 
-                <Button 
-                  onClick={handlePurchase} 
-                  disabled={isProcessing}
-                  className="w-full h-14 text-lg font-bold bg-[#dc2626] hover:bg-[#b91c1c] text-white transition-all shadow-[0_0_20px_-5px_rgba(220,38,38,0.5)]"
-                >
-                  {isProcessing ? (
-                    <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Processing...
-                    </>
-                  ) : (
-                    "Complete Purchase (Demo)"
-                  )}
-                </Button>
+                <Link href="https://rzp.io/rzp/HYNOQhAL" target="_blank" className="w-full">
+                  <Button 
+                    className="w-full h-14 text-lg font-bold bg-[#dc2626] hover:bg-[#b91c1c] text-white transition-all shadow-[0_0_20px_-5px_rgba(220,38,38,0.5)]"
+                  >
+                    Continue to Payment
+                  </Button>
+                </Link>
                 
                 <p className="text-center text-xs text-[#a3a3a3] mt-4">
-                  This is a demo. No actual payment will be processed.
+                  Secure checkout provided by Razorpay. Your license key will be sent via email after purchase.
                 </p>
               </div>
             </div>
-          ) : (
-            /* Success State */
-            <div className="max-w-2xl mx-auto mt-12 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle2 className="h-10 w-10 text-green-500" />
-              </div>
-              <h1 className="text-4xl font-bold text-white mb-4">You're officially a Pro!</h1>
-              <p className="text-[#a3a3a3] text-lg mb-12">
-                Thank you for upgrading. Your license key has been generated and is ready to use.
-              </p>
-
-              <div className="bg-[#121212] border border-[#333333] rounded-xl p-8 text-left mb-8 shadow-xl">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-[#dc2626]/10 rounded-lg">
-                    <Key className="h-6 w-6 text-[#dc2626]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Your License Key</h3>
-                </div>
-                
-                <div className="bg-[#0a0a0a] border border-[#333333] rounded-lg p-4 flex justify-between items-center mb-8 font-mono text-lg text-white">
-                  <span>{licenseKey}</span>
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    className="text-[#a3a3a3] hover:text-white"
-                    onClick={() => navigator.clipboard.writeText(licenseKey)}
-                  >
-                    Copy
-                  </Button>
-                </div>
-
-                <h4 className="text-white font-semibold mb-4">Activation Instructions</h4>
-                <p className="text-[#a3a3a3] mb-4 text-sm">
-                  Run the following command in your terminal to activate PackVault Pro on your machine:
-                </p>
-                <div className="bg-black border border-[#333333] rounded-lg p-4 flex items-center gap-3">
-                  <Terminal className="h-5 w-5 text-[#a3a3a3]" />
-                  <code className="text-[#e5e5e5] font-mono text-sm">packvault activate {licenseKey}</code>
-                </div>
-              </div>
-
-              <Link href="/">
-                <Button variant="outline" className="text-white hover:text-white">
-                  Return to Home
-                </Button>
-              </Link>
-            </div>
-          )}
         </div>
       </main>
       <Footer />
