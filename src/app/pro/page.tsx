@@ -20,7 +20,7 @@ export default function ProPage() {
                   Unlock the full power of <span className="text-[#dc2626]">PackVault</span>
                 </h1>
                 <p className="text-xl text-[#a3a3a3] mb-8">
-                  Supercharge your team's workflow with offline peer-to-peer sync, classroom modes, and local proxy registries.
+                  Supercharge your team&apos;s workflow with offline peer-to-peer sync, classroom modes, and local proxy registries.
                 </p>
 
                 <div className="space-y-6">

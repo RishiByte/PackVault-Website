@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { GithubIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
@@ -7,8 +8,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#333333] bg-[#0a0a0a]/80 backdrop-blur">
       <div className="container mx-auto flex h-16 items-center px-4 md:px-6">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="font-bold text-lg sm:text-xl text-white">PackVault</span>
+        <Link href="/" className="mr-6 flex items-center space-x-3">
+          <Image src="/omnikon-logo.png" alt="Omnikon Logo" width={32} height={32} className="rounded-sm" />
+          <div className="flex flex-col">
+            <span className="font-bold text-lg sm:text-xl text-white leading-tight">PackVault</span>
+            <span className="text-[10px] text-[#a3a3a3] uppercase tracking-widest hidden sm:block">By Omnikon</span>
+          </div>
         </Link>
         
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">

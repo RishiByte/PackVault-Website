@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Globe, Users, ServerOff, ShieldCheck } from "lucide-react";

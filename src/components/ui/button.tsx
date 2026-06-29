@@ -32,7 +32,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           },
           className
         )}
-        ref={ref as any}
+        ref={ref}
         {...props}
       />
     );
