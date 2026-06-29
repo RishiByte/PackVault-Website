@@ -157,7 +157,7 @@ export default function Home() {
                 className="inline-flex items-center rounded-full border border-[#5c1919] bg-[#2a0f0f] px-4 py-1 text-sm text-[#e88585] mb-8 font-medium shadow-sm"
               >
                 <span className="flex h-2 w-2 rounded-full bg-[#dc2626] mr-2"></span>
-                PackVault v1.0 by Omnikon
+                PackVault v0.2.3 by Omnikon
               </motion.div>
               
               <motion.h1 

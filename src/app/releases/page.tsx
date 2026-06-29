@@ -26,12 +26,24 @@ export default function ReleasesPage() {
           </div>
 
           <div className="space-y-8">
-            {/* v0.2.2 */}
+            {/* v0.2.3 */}
             <div className="relative pl-8 border-l border-[#333333]">
               <div className="absolute w-4 h-4 rounded-full bg-[#dc2626] -left-[9px] top-1"></div>
               <div className="mb-2 flex items-center gap-4">
-                <h2 className="text-2xl font-bold text-white">v0.2.2</h2>
+                <h2 className="text-2xl font-bold text-white">v0.2.3</h2>
                 <span className="px-2 py-1 text-xs font-medium rounded-full bg-green-500/20 text-green-400">Latest</span>
+                <span className="text-sm text-[#a3a3a3]">June 2026</span>
+              </div>
+              <div className="prose prose-invert prose-red max-w-none">
+                <p>Stability improvements and minor bug fixes.</p>
+              </div>
+            </div>
+
+            {/* v0.2.2 */}
+            <div className="relative pl-8 border-l border-[#333333]">
+              <div className="absolute w-3 h-3 rounded-full bg-[#333333] -left-[6.5px] top-2"></div>
+              <div className="mb-2 flex items-center gap-4">
+                <h2 className="text-xl font-bold text-white">v0.2.2</h2>
                 <span className="text-sm text-[#a3a3a3]">June 2026</span>
               </div>
               <div className="prose prose-invert prose-red max-w-none">
