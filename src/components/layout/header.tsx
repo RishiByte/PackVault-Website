@@ -9,7 +9,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-[#333333] bg-[#0a0a0a]/80 backdrop-blur">
       <div className="container mx-auto flex h-16 items-center px-4 md:px-6">
         <Link href="/" className="mr-6 flex items-center space-x-3">
-          <Image src="/omnikon-logo.png" alt="Omnikon Logo" width={32} height={32} className="rounded-sm" />
+          <img src="/packvault-logo.png" alt="PackVault Logo" width={32} height={32} className="rounded-sm object-contain" />
           <div className="flex flex-col">
             <span className="font-bold text-lg sm:text-xl text-white leading-tight">PackVault</span>
             <span className="text-[10px] text-[#a3a3a3] uppercase tracking-widest hidden sm:block">By Omnikon</span>

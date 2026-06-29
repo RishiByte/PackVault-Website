@@ -18,7 +18,8 @@ import {
   Quote,
   Zap,
   Lock,
-  Boxes
+  Boxes,
+  Check
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
@@ -123,11 +124,18 @@ const AnimatedTerminal = () => {
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-     
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('npm install -g packvault');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <>
@@ -146,9 +154,9 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center rounded-full border border-[#dc2626]/30 bg-[#dc2626]/10 px-3 py-1 text-sm text-[#ff8a8a] mb-8 font-medium"
+                className="inline-flex items-center rounded-full border border-[#5c1919] bg-[#2a0f0f] px-4 py-1 text-sm text-[#e88585] mb-8 font-medium shadow-sm"
               >
-                <span className="flex h-2 w-2 rounded-full bg-[#dc2626] mr-2 animate-pulse"></span>
+                <span className="flex h-2 w-2 rounded-full bg-[#dc2626] mr-2"></span>
                 PackVault v1.0 by Omnikon
               </motion.div>
               
@@ -214,7 +222,7 @@ export default function Home() {
               A premium tool developed by
             </p>
             <div className="flex items-center gap-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-              <Image src="/omnikon-logo.png" width={40} height={40} alt="Omnikon" className="rounded-md" />
+              <img src="https://github.com/Omnikon-Org.png" width={40} height={40} alt="Omnikon" className="rounded-md" />
               <span className="text-2xl font-bold text-white tracking-wide">OMNIKON</span>
             </div>
           </div>
@@ -464,12 +472,20 @@ export default function Home() {
               </Link>
               <div className="flex items-center px-6 py-3 rounded-xl bg-[#111] border border-[#333]">
                 <code className="text-[#e5e5e5] font-mono mr-4">npm install -g packvault</code>
-                <button className="text-[#a3a3a3] hover:text-white transition-colors" onClick={() => navigator.clipboard.writeText('npm install -g packvault')}>
+                <button 
+                  className="text-[#a3a3a3] hover:text-white transition-colors flex items-center justify-center w-5 h-5" 
+                  onClick={handleCopy}
+                  title="Copy to clipboard"
+                >
                   <span className="sr-only">Copy</span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-4 w-4">
-                    <path d="M1 4C1 2.34315 2.34315 1 4 1H10C11.6569 1 13 2.34315 13 4V10C13 11.6569 11.6569 13 10 13H4C2.34315 13 1 11.6569 1 10V4ZM4 2C2.89543 2 2 2.89543 2 4V10C2 11.1046 2.89543 12 4 12H10C11.1046 12 12 11.1046 12 10V4C12 2.89543 11.1046 2 10 2H4Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path>
-                    <path d="M5 14H11C12.6569 14 14 12.6569 14 11V5C14 4.44772 14.4477 4 15 4C15.5523 4 16 4.44772 16 5V11C16 13.7614 13.7614 16 11 16H5C4.44772 16 4 15.5523 4 15C4 14.4477 4.44772 14 5 14Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path>
-                  </svg>
+                  {copied ? (
+                    <Check className="h-4 w-4 text-green-500" />
+                  ) : (
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-4 w-4">
+                      <path d="M1 4C1 2.34315 2.34315 1 4 1H10C11.6569 1 13 2.34315 13 4V10C13 11.6569 11.6569 13 10 13H4C2.34315 13 1 11.6569 1 10V4ZM4 2C2.89543 2 2 2.89543 2 4V10C2 11.1046 2.89543 12 4 12H10C11.1046 12 12 11.1046 12 10V4C12 2.89543 11.1046 2 10 2H4Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path>
+                      <path d="M5 14H11C12.6569 14 14 12.6569 14 11V5C14 4.44772 14.4477 4 15 4C15.5523 4 16 4.44772 16 5V11C16 13.7614 13.7614 16 11 16H5C4.44772 16 4 15.5523 4 15C4 14.4477 4.44772 14 5 14Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path>
+                    </svg>
+                  )}
                 </button>
               </div>
             </div>

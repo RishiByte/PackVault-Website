@@ -73,7 +73,7 @@ export default function ProPage() {
                   </div>
                 </div>
 
-                <Link href="https://rzp.io/rzp/HYNOQhAL" target="_blank" className="w-full">
+                <Link href="https://rzp.io/rzp/KTOj0BQ" target="_blank" className="w-full">
                   <Button 
                     className="w-full h-14 text-lg font-bold bg-[#dc2626] hover:bg-[#b91c1c] text-white transition-all shadow-[0_0_20px_-5px_rgba(220,38,38,0.5)]"
                   >
@@ -81,8 +81,10 @@ export default function ProPage() {
                   </Button>
                 </Link>
                 
-                <p className="text-center text-xs text-[#a3a3a3] mt-4">
-                  Secure checkout provided by Razorpay. Your license key will be sent via email after purchase.
+                <p className="text-center text-xs text-[#a3a3a3] mt-4 leading-relaxed">
+                  Secure checkout provided by Razorpay. 
+                  <br/>
+                  <span className="text-white">You will receive your premium license key via email immediately after successful payment.</span>
                 </p>
               </div>
             </div>

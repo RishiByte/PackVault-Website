@@ -22,11 +22,11 @@ export function Footer() {
                 <GithubIcon className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
-              <Link href="https://twitter.com/omnikon" target="_blank" className="hover:text-white transition-colors">
+              <Link href="https://x.com/OmnikonOrg" target="_blank" className="hover:text-white transition-colors">
                 <TwitterIcon className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="mailto:hello@omnikon.org" className="hover:text-white transition-colors">
+              <Link href="mailto:omnikonorg@gmail.com" className="hover:text-white transition-colors">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </Link>
